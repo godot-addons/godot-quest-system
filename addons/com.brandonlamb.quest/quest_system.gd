@@ -55,10 +55,10 @@ class Quest:
 		emit_signal("on_started", self)
 
 	func set_status(status):
-		for name in QuestStatus:
-			if status == v:
-				self.status = status
-				return
+#		for name in QuestStatus:
+#			if status == v:
+#				self.status = status
+#				return
 
 		print("invalid status")
 
