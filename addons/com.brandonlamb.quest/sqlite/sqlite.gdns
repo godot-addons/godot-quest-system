@@ -1,0 +1,22 @@
+[gd_resource type="NativeScript" load_steps=2 format=2]
+
+[sub_resource type="GDNativeLibrary" id=1]
+
+resource_name = "SQLite"
+platform/X11_32bit = ""
+platform/X11_64bit = "res://lib/libsqlite.so"
+platform/Windows_32bit = ""
+platform/Windows_64bit = ""
+platform/OSX = ""
+platform/Android = ""
+platform/iOS = ""
+platform/WebAssembly = ""
+_sections_unfolded = [ "Resource", "platform" ]
+
+[resource]
+
+resource_name = "SQLite"
+class_name = "SQLite"
+library = SubResource( 1 )
+_sections_unfolded = [ "Resource" ]
+
