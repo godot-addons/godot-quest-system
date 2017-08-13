@@ -24,9 +24,28 @@ func _init(
 	self.id = id
 	self.name = name
 	self.description = description
+	set_status(status)
 	self.rewards = rewards
 	self.requirements = requirements
 	self.goals = goals
+
+func _get_status():
+	if status == Status.UNKNOWN:
+		return "unknown"
+	elif status == Status.STARTED:
+		return "started"
+	elif status == Status.FAILED:
+		return "failed"
+	elif status == Status.FINISHED:
+		return "finished"
+
+func to_string():
+	return str(
+		"id=", id,
+		", name=", name,
+		", description=", description,
+		", status=", _get_status()
+	)
 
 func start():
 	emit_signal("on_started", self)

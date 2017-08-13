@@ -5,7 +5,7 @@ var reward_float
 var reward_int
 
 func _init(type = Type.UNKNOWN, reward_float = 0.0, reward_int = 0):
-	self.type = type
+	set_type(type)
 	self.reward_float = reward_float
 	self.reward_int = reward_int
 

@@ -6,7 +6,7 @@ var goal_float
 var goal_vector
 
 func _init(type = Type.UNKNOWN, goal_int = 0, goal_float = 0.0, goal_vector = null):
-	self.type = set_type(type)
+	set_type(type)
 	self.goal_int = goal_int
 	self.goal_float = goal_float
 	self.goal_vector = goal_vector

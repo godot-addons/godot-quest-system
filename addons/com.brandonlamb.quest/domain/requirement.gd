@@ -8,7 +8,7 @@ var required_number
 var required_string
 
 func _init(type = Type.UNKNOWN, required_number = 0, required_string = ""):
-	self.type = type
+	set_type(type)
 	self.required_number = required_number
 	self.required_string = required_string
 
