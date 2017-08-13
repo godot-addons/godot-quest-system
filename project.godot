@@ -1,0 +1,11 @@
+config_version=3
+
+[application]
+
+config/name="com.brandonlamb.quest"
+run/main_scene="res://example/main.tscn"
+config/icon="res://icon.png"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
