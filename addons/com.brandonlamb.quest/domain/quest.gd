@@ -4,19 +4,29 @@ var id
 var name
 var description
 var status = Status.UNKNOWN setget set_status
-var rewards = []
-var requirements = []
-var goals = []
+var rewards
+var requirements
+var goals
 
 signal started(event_target)
 signal progressed(event_target)
 signal goals_completed(event_target)
 signal finished(event_target)
 
-func _init(id = 0, name = "", description = "", status = Status.UNKNOWN):
+func _init(
+	id = 0, name = "Default name",
+	description = "Default description",
+	status = Status.UNKNOWN,
+	rewards = [],
+	requirements = [],
+	goals = []
+):
 	self.id = id
 	self.name = name
 	self.description = description
+	self.rewards = rewards
+	self.requirements = requirements
+	self.goals = goals
 
 func start():
 	emit_signal("on_started", self)

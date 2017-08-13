@@ -11,7 +11,7 @@ func _ready():
 	quest.connect("on_started", self, "_on_quest_started")
 	quest.start()
 	quest.set_status(QuestStatus.STARTED)
-	quest.set_status(QuestStatus.XYZ)
+	quest.set_status("xyz")
 
 func _on_quest_started(e):
 	print("_on_quest_started: ", e.name)
