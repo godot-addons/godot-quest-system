@@ -1,5 +1,10 @@
 extends Reference
 
+signal quest_created(quest)
+signal quest_deleted(quest)
+signal quest_saved(quest)
+signal quests_cleared()
+
 """
 Find quest by ID
 @param int id
