@@ -9,6 +9,29 @@ func _init(type = Type.UNKNOWN, reward_float = 0.0, reward_int = 0):
 	self.reward_float = reward_float
 	self.reward_int = reward_int
 
+func _get_type():
+	if type == Type.UNKNOWN:
+		return "unknown"
+	elif type == Type.EXPERIENCE:
+		return "experience"
+	elif type == Type.ITEM:
+		return "item"
+	elif type == Type.TRIGGER_ACTIVE:
+		return "trigger_active"
+	elif type == Type.TRIGGER_DEACTIVE:
+		return "trigger_deactive"
+	elif type == Type.FACTION_SCORE:
+		return "faction_score"
+	elif type == Type.GOLD:
+		return "gold"
+
+func to_string():
+	return str(
+		"type=", _get_type(),
+		", reward_float=", reward_float,
+		", reward_int=", reward_int
+	)
+
 func set_type(value):
 	# Support passing a Type enum
 	if typeof(value) != TYPE_STRING:

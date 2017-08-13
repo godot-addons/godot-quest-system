@@ -5,11 +5,38 @@ var goal_int
 var goal_float
 var goal_vector
 
-func _init(type = Type.UNKNOWN, goal_int = 0, goal_float = 0.0, goal_vector = null):
+func _init(
+	type = Type.UNKNOWN,
+	goal_int = 0,
+	goal_float = 0.0,
+	goal_vector = null
+):
 	set_type(type)
 	self.goal_int = goal_int
 	self.goal_float = goal_float
 	self.goal_vector = goal_vector
+
+func _get_type():
+	if type == Type.UNKNOWN:
+		return "unknown"
+	elif type == Type.ITEMS_HELD:
+		return "items_held"
+	elif type == Type.GOLD:
+		return "gold"
+	elif type == Type.ENEMIES_KILLED:
+		return "enemies_killed"
+	elif type == Type.DESTINATION_REACHED:
+		return "destination_reached"
+	elif type == Type.TRIGGER_ENABLED:
+		return "trigger_enabled"
+
+func to_string():
+	return str(
+		"type=", _get_type(),
+		", goal_int=", goal_int,
+		", goal_float=", goal_float,
+		", goal_vector=", goal_vector
+	)
 
 func set_type(value):
 	# Support passing a Type enum

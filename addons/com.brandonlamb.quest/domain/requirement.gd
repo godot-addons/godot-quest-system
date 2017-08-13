@@ -12,6 +12,31 @@ func _init(type = Type.UNKNOWN, required_number = 0, required_string = ""):
 	self.required_number = required_number
 	self.required_string = required_string
 
+func _get_type():
+	if type == Type.UNKNOWN:
+		return "unknown"
+	elif type == Type.LEVEL:
+		return "level"
+	elif type == Type.CLASS:
+		return "class"
+	elif type == Type.RACE:
+		return "race"
+	elif type == Type.FACTION_SCORE:
+		return "faction_score"
+	elif type == Type.TRIGGER_ACTIVE:
+		return "trigger_active"
+	elif type == Type.TRIGGER_DEACTIVE:
+		return "trigger_deactive"
+	elif type == Type.ITEM_HELD:
+		return "item_held"
+
+func to_string():
+	return str(
+		"type=", _get_type(),
+		", required_number=", required_number,
+		", required_string=", required_string
+	)
+
 func set_type(value):
 	# Support passing a Type enum
 	if typeof(value) != TYPE_STRING:
