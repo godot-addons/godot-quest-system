@@ -1,8 +1,8 @@
-extends Node2D
+extends Node
 
-const Quest = preload("res://addons/com.brandonlamb.quest/domain/quest.gd")
-const QuestRepo = preload("res://addons/com.brandonlamb.quest/memory/quest_repository.gd")
-const QuestFactory = preload("res://addons/com.brandonlamb.quest/memory/quest_factory.gd")
+const Quest = preload("res://addons/godot-quest-system/domain/quest.gd")
+const QuestRepo = preload("res://addons/godot-quest-system/memory/quest_repository.gd")
+const QuestFactory = preload("res://addons/godot-quest-system/memory/quest_factory.gd")
 
 func _ready():
 	var questRepo = QuestRepo.new(QuestFactory.create_from_static())
