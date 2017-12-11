@@ -1,6 +1,6 @@
-extends "res://addons/com.brandonlamb.quest/domain/quest_repository.gd"
+extends "res://addons/godot-quest-system/domain/quest_repository.gd"
 
-const Quest = preload("res://addons/com.brandonlamb.quest/domain/quest.gd")
+const Quest = preload("res://addons/godot-quest-system/domain/quest.gd")
 
 const _quests = []
 const _questsMap = {}

@@ -1,6 +1,6 @@
 extends Node
 
-var SQLite = preload("res://addons/com.brandonlamb.quest/sqlite/sqlite.gdns")
+var SQLite = preload("res://addons/godot-quest-system/sqlite/sqlite.gdns")
 var db = SQLite.new()
 
 func _ready():

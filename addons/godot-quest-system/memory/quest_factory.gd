@@ -1,6 +1,6 @@
 extends Reference
 
-const Quest = preload("res://addons/com.brandonlamb.quest/domain/quest.gd")
+const Quest = preload("res://addons/godot-quest-system/domain/quest.gd")
 const QuestStatus = Quest.Status
 
 static func create_from_array(quests):
