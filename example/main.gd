@@ -5,14 +5,14 @@ const QuestRepo = preload("res://addons/godot-quest-system/memory/quest_reposito
 const QuestFactory = preload("res://addons/godot-quest-system/memory/quest_factory.gd")
 
 func _ready():
-	var questRepo = QuestRepo.new(QuestFactory.create_from_static())
-	var quests = questRepo.find_all()
+	var quest_repo = QuestRepo.new(QuestFactory.create_from_static())
+	var quests = quest_repo.find_all()
 
 	for i in quests:
 		i.connect("started", self, "_on_quest_started")
 		i.start()
 
-	var quest = questRepo.find_by_id(1)
+	var quest = quest_repo.find_by_id(1)
 	quest.status = "finished"
 	print(quest.to_string())
 	print("quest.to_string()=", quest.to_string())
@@ -21,6 +21,7 @@ func _ready():
 
 	for i in quests:
 		print(i.to_string())
+		$ui/quests.add_item(i.name)
 
 func _on_quest_started(e):
 	print("_on_quest_started: ", e.name)
