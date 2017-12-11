@@ -33,4 +33,24 @@ max_text_lines = 5
 auto_height = true
 icon_mode = 1
 
+[node name="quest_info" type="Label" parent="ui"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -500.0
+margin_right = 150.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="item_selected" from="ui/quests" to="." method="_on_quests_item_selected"]
+
 

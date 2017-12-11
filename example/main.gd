@@ -4,8 +4,10 @@ const Quest = preload("res://addons/godot-quest-system/domain/quest.gd")
 const QuestRepo = preload("res://addons/godot-quest-system/memory/quest_repository.gd")
 const QuestFactory = preload("res://addons/godot-quest-system/memory/quest_factory.gd")
 
+var quest_repo
+
 func _ready():
-	var quest_repo = QuestRepo.new(QuestFactory.create_from_static())
+	quest_repo = QuestRepo.new(QuestFactory.create_from_static())
 	var quests = quest_repo.find_all()
 
 	for i in quests:
@@ -25,3 +27,7 @@ func _ready():
 
 func _on_quest_started(e):
 	print("_on_quest_started: ", e.name)
+
+func _on_quests_item_selected( index ):
+	var quests = quest_repo.find_all()
+	$ui/quest_info.text = str("Quest: ", quests[index].description)
