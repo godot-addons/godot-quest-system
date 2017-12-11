@@ -17,6 +17,3 @@ config/icon="res://icon.png"
 [gdnative]
 
 singletons=[  ]
-
-[rendering]
-
